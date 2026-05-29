@@ -1,0 +1,228 @@
+/*
+ * Author:      All Member
+ * Description: Page layout, navbar, footer, and responsive styles
+ * Date:        23/5/2026
+ */
+/* =====================================================
+   InsightLearn - Layout Stylesheet
+   Navbar, footer, and all responsive breakpoints
+   ===================================================== */
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+.navbar {
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.nav-menu li a,
+.nav-menu li span {
+    display: block;
+    padding: 6px 14px;
+    border-radius: var(--radius-sm);
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.nav-menu li a:hover {
+    background: #F5F3FF;
+    color: var(--primary);
+}
+
+.nav-menu li a.active {
+    background: #F5F3FF;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.nav-user-info {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.nav-user-link {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 20px;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+}
+.nav-user-link:hover {
+    background: #F5F3FF;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Admin navbar */
+.navbar-admin { background: #1E1B4B; }
+.navbar-admin .logo { color: #FFFFFF; }
+.navbar-admin .nav-menu li a { color: rgba(255,255,255,0.75); }
+.navbar-admin .nav-menu li a:hover,
+.navbar-admin .nav-menu li a.active {
+    background: rgba(255,255,255,0.12);
+    color: #FFFFFF;
+}
+.navbar-admin .nav-auth { color: rgba(255,255,255,0.85); }
+
+/* Hamburger (mobile) */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    flex-direction: column;
+    gap: 5px;
+}
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+footer {
+    background: #1E1B4B;
+    border-top: none;
+    padding: 32px 0;
+    margin-top: auto;
+    color: rgba(255,255,255,0.7);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+footer p { font-size: 0.85rem; }
+
+.footer-links { display: flex; gap: 20px; font-size: 0.85rem; }
+.footer-links a { color: rgba(255,255,255,0.6); transition: color 0.15s; }
+.footer-links a:hover { color: #fff; }
+
+/* =====================================================
+   RESPONSIVE — TABLET (900px)
+   ===================================================== */
+@media (max-width: 900px) {
+    .stats-grid        { grid-template-columns: repeat(2, 1fr); }
+    .features-grid     { grid-template-columns: repeat(2, 1fr); }
+    .courses-grid      { grid-template-columns: repeat(2, 1fr); }
+    .dashboard-grid    { grid-template-columns: 1fr; }
+    .lesson-layout     { grid-template-columns: 1fr; }
+    .quiz-layout       { grid-template-columns: 1fr; }
+    .howit-grid        { grid-template-columns: repeat(2, 1fr); }
+    .hero-inner        { grid-template-columns: 1fr; }
+    .hero-visual       { display: none; }
+    .stats-band-inner  { grid-template-columns: repeat(2, 1fr); }
+    .hero h1           { font-size: 2.2rem; }
+    .tech-stack-grid   { grid-template-columns: repeat(2, 1fr); }
+    .about-hero h1     { font-size: 2.2rem; }
+    .pillar-divider    { display: none; }
+    .team-members-row  { gap: 28px; }
+}
+
+/* =====================================================
+   RESPONSIVE — MOBILE (768px)
+   ===================================================== */
+@media (max-width: 768px) {
+    .nav-menu { display: none; }
+    .nav-menu.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        background: var(--bg-white);
+        border-bottom: 1px solid var(--border);
+        padding: 12px;
+        z-index: 99;
+    }
+    .nav-toggle          { display: flex; }
+    .filter-bar          { flex-direction: column; }
+    .filter-group        { width: 100%; }
+    .action-bar          { flex-direction: column; align-items: stretch; }
+    .form-row            { grid-template-columns: 1fr; }
+    .footer-container    { flex-direction: column; text-align: center; }
+    .hero-stats          { gap: 16px; }
+    .result-actions-card { flex-direction: column; }
+    .result-stats-row    { gap: 20px; }
+    .howit-grid          { grid-template-columns: 1fr 1fr; }
+    .admin-stats-bar     { gap: 10px; }
+    .admin-stat-chip     { min-width: calc(50% - 5px); }
+    .settings-grid       { grid-template-columns: 1fr; }
+    .settings-hero-inner { flex-direction: column; text-align: center; }
+    .settings-hero h1    { font-size: 1.4rem; }
+}
+
+/* =====================================================
+   RESPONSIVE — SMALL MOBILE (480px)
+   ===================================================== */
+@media (max-width: 480px) {
+    .stats-grid        { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .courses-grid      { grid-template-columns: 1fr; }
+    .features-grid     { grid-template-columns: 1fr; }
+    .howit-grid        { grid-template-columns: 1fr; }
+    .stats-band-inner  { grid-template-columns: 1fr 1fr; }
+    .hero h1           { font-size: 1.9rem; }
+    .auth-card         { padding: 28px 20px; }
+    .quiz-layout       { grid-template-columns: 1fr; }
+    .lesson-layout     { grid-template-columns: 1fr; }
+    .lesson-sidebar    { order: -1; }
+    .rsc-num           { font-size: 2.2rem; }
+    .cert-grid         { grid-template-columns: 1fr; }
+    .about-hero h1     { font-size: 1.8rem; }
+    .about-cta-btns    { flex-direction: column; align-items: center; }
+    .team-members-row  { gap: 24px; }
+    .team-circle       { width: 76px; height: 76px; font-size: 1.3rem; }
+}

@@ -1,0 +1,111 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+<%--
+    Author:      Ian Lim
+    Description: Student-facing master page layout
+    Date:        23/5/2026
+--%>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><asp:ContentPlaceHolder ID="cphTitle" runat="server">InsightLearn</asp:ContentPlaceHolder> | InsightLearn</title>
+
+    <!-- External CSS — split into 5 files by team member -->
+    <link rel="stylesheet" type="text/css" href="Styles/base.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/layout.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/components.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/student-pages.css" />
+
+    <!-- Internal CSS demo (assignment requires showing multiple CSS types) -->
+    <style type="text/css">
+        /* Internal style - additional overrides not in external file */
+        .nav-brand-dot { color: #A78BFA; }
+    </style>
+
+    <asp:ContentPlaceHolder ID="cphHead" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!-- ===== NAVIGATION ===== -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <a href="Default.aspx" class="logo">
+                    Insight<span class="nav-brand-dot">Learn</span>
+                </a>
+
+                <!-- Hamburger for mobile -->
+                <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+
+                <!-- Nav links -->
+                <ul class="nav-menu" id="navMenu">
+                    <li>
+                        <a href="Default.aspx"
+                           id="navHome" runat="server">Home</a>
+                    </li>
+                    <li>
+                        <a href="CourseList.aspx"
+                           id="navCourses" runat="server">Courses</a>
+                    </li>
+                    <li>
+                        <asp:HyperLink ID="navDashboard" runat="server"
+                            NavigateUrl="StudentDashboard.aspx"
+                            Visible="false">Dashboard</asp:HyperLink>
+                    </li>
+                    <li>
+                        <a href="About.aspx"
+                           id="navAbout" runat="server">About</a>
+                    </li>
+                </ul>
+
+                <!-- Auth buttons -->
+                <div class="nav-auth">
+                    <asp:HyperLink ID="hlNavUser" runat="server" NavigateUrl="Settings.aspx"
+                        CssClass="nav-user-link" Visible="false" />
+                    <asp:HyperLink ID="hlLogin" runat="server"
+                        NavigateUrl="Login.aspx"
+                        CssClass="btn btn-primary btn-sm">Login</asp:HyperLink>
+                    <asp:LinkButton ID="lbLogout" runat="server"
+                        OnClick="lbLogout_Click"
+                        CssClass="btn btn-outline btn-sm"
+                        Visible="false"
+                        OnClientClick="return confirm('Are you sure you want to logout?');">Logout</asp:LinkButton>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main>
+            <asp:ContentPlaceHolder ID="cphContent" runat="server" />
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <div class="footer-container">
+                <div>
+                    <div style="font-size:1.1rem; font-weight:700; color:#fff; margin-bottom:4px;">
+                        Insight<span style="color:#A78BFA;">Learn</span>
+                    </div>
+                    <p>&copy; 2026 InsightLearn. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="Default.aspx">Home</a>
+                    <a href="CourseList.aspx">Courses</a>
+                    <a href="About.aspx">About</a>
+                    <a href="Login.aspx">Login</a>
+                    <a href="Register.aspx">Register</a>
+                </div>
+            </div>
+        </footer>
+
+    </form>
+
+    <!-- External JavaScript -->
+    <script type="text/javascript" src="Scripts/scripts.js?v=4"></script>
+    <asp:ContentPlaceHolder ID="cphScripts" runat="server" />
+</body>
+</html>

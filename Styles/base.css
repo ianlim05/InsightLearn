@@ -1,0 +1,69 @@
+/*
+ * Author:      All Member
+ * Description: Base CSS variables, reset, and typography
+ * Date:        23/5/2026
+ */
+/* =====================================================
+   InsightLearn - Base Stylesheet
+   CSS variables, reset, typography, utility classes
+   ===================================================== */
+
+/* -- CSS Custom Properties (Color Palette) -- */
+:root {
+    --primary:      #7C3AED;
+    --primary-dark: #6D28D9;
+    --secondary:    #8B5CF6;
+    --accent:       #A78BFA;
+    --bg:           #F8FAFC;
+    --bg-white:     #FFFFFF;
+    --bg-card:      #FFFFFF;
+    --text:         #1E293B;
+    --text-light:   #64748B;
+    --text-muted:   #94A3B8;
+    --border:       #E2E8F0;
+    --success:      #10B981;
+    --danger:       #EF4444;
+    --warning:      #F59E0B;
+    --shadow:       0 1px 3px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-md:    0 4px 16px rgba(124,58,237,0.14);
+    --radius:       10px;
+    --radius-sm:    6px;
+    --transition:   all 0.2s ease;
+}
+
+/* -- Reset & Base -- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { color: var(--primary-dark); }
+
+img { max-width: 100%; display: block; }
+
+main { flex: 1; }
+
+/* -- Utility Classes -- */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+.text-muted  { color: var(--text-light); font-size: 0.875rem; }
+.hidden      { display: none; }
+.flex        { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.gap-2       { gap: 16px; }

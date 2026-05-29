@@ -1,0 +1,88 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminSite.master.cs" Inherits="AdminSite" %>
+<%--
+    Author:      Ian Lim
+    Description: Admin master page layout
+    Date:        23/5/2026
+--%>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><asp:ContentPlaceHolder ID="cphTitle" runat="server">Admin</asp:ContentPlaceHolder> | InsightLearn Admin</title>
+    <!-- External CSS — split into 5 files by team member -->
+    <link rel="stylesheet" type="text/css" href="Styles/base.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/layout.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/components.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/admin-pages.css" />
+
+    <!-- Internal style for admin-specific overrides -->
+    <style type="text/css">
+        body { background-color: #F1F5F9; }
+        .admin-content-wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    </style>
+
+    <asp:ContentPlaceHolder ID="cphHead" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!-- ===== ADMIN NAVIGATION ===== -->
+        <nav class="navbar navbar-admin">
+            <div class="nav-container">
+                <!-- Admin Logo -->
+                <a href="AdminDashboard.aspx" class="logo">
+                    InsightLearn <span style="font-size:0.7rem; font-weight:500; opacity:0.7; margin-left:4px;">Admin</span>
+                </a>
+
+                <!-- Admin Nav Links -->
+                <ul class="nav-menu" id="adminNavMenu">
+                    <li>
+                        <a href="AdminDashboard.aspx" id="navAdminDash" runat="server">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="AdminManageUsers.aspx" id="navAdminUsers" runat="server">Users</a>
+                    </li>
+                    <li>
+                        <a href="AdminManageCourses.aspx" id="navAdminCourses" runat="server">Courses</a>
+                    </li>
+                    <li>
+                        <a href="AdminManageLessons.aspx" id="navAdminLessons" runat="server">Lessons</a>
+                    </li>
+                    <li>
+                        <a href="AdminManageQuizzes.aspx" id="navAdminQuizzes" runat="server">Quizzes</a>
+                    </li>
+                </ul>
+
+                <!-- Admin user info and exit -->
+                <div class="nav-auth">
+                    <asp:Label ID="lblAdminName" runat="server" CssClass="nav-user-info" />
+                    <asp:LinkButton ID="lbExitAdmin" runat="server"
+                        OnClick="lbExitAdmin_Click"
+                        CssClass="btn btn-outline-light btn-sm"
+                        OnClientClick="return confirm('Exit admin area?');">Exit Admin</asp:LinkButton>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ===== ADMIN CONTENT ===== -->
+        <main>
+            <asp:ContentPlaceHolder ID="cphContent" runat="server" />
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <div class="footer-container">
+                <p>&copy; 2026 InsightLearn Admin Panel. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="Default.aspx">Public Site</a>
+                    <a href="AdminDashboard.aspx">Dashboard</a>
+                </div>
+            </div>
+        </footer>
+
+    </form>
+    <script type="text/javascript" src="Scripts/scripts.js"></script>
+    <asp:ContentPlaceHolder ID="cphScripts" runat="server" />
+</body>
+</html>

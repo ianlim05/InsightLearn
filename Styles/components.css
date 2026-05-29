@@ -1,0 +1,534 @@
+/*
+ * Author:      GLOBAL SHARED CSS
+ * Description: Reusable UI component styles
+ * Date:        23/5/2026
+ */
+/* =====================================================
+   InsightLearn - Components Stylesheet
+   Buttons, cards, forms, tables, badges, and
+   all reusable UI components
+   ===================================================== */
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 20px;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    line-height: 1;
+    white-space: nowrap;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+.btn-primary:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(124,58,237,0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
+}
+.btn-outline:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-outline-light {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255,255,255,0.7);
+}
+.btn-outline-light:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: #fff;
+    border-color: var(--danger);
+}
+.btn-danger:hover { background: #DC2626; border-color: #DC2626; }
+
+.btn-success {
+    background: var(--success);
+    color: #fff;
+    border-color: var(--success);
+}
+.btn-success:hover { background: #059669; border-color: #059669; color: #fff; }
+
+.btn-sm { padding: 6px 14px; font-size: 0.8rem; }
+.btn-lg { padding: 13px 30px; font-size: 1rem; }
+.btn-block { width: 100%; }
+
+input[type="submit"],
+input[type="button"] { font-family: inherit; }
+
+/* =====================================================
+   CARDS (General)
+   ===================================================== */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 18px 24px 14px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-header h3 { font-size: 1rem; font-weight: 700; color: var(--text); }
+
+.card-body  { padding: 24px; }
+.card-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--border);
+    background: #FAFBFC;
+}
+
+/* =====================================================
+   FORM CONTROLS
+   ===================================================== */
+.form-group { margin-bottom: 18px; }
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.form-control,
+.form-control-asp {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--bg-white);
+    transition: border-color 0.15s, box-shadow 0.15s;
+    font-family: inherit;
+    outline: none;
+}
+
+.form-control:focus,
+.form-control-asp:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(124,58,237,0.12);
+}
+
+select.form-control,
+select.form-control-asp {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+}
+
+.form-hint { font-size: 0.8rem; color: var(--text-light); margin-top: 4px; }
+
+/* ASP.NET Validators */
+.field-validator {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--danger);
+    margin-top: 4px;
+}
+
+.validation-summary {
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    margin-bottom: 18px;
+    color: var(--danger);
+    font-size: 0.875rem;
+}
+
+.validation-summary ul { margin: 4px 0 0 16px; }
+.validation-summary li { margin: 2px 0; }
+
+/* Alert messages */
+.alert {
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.alert-danger  { background: #FEF2F2; border: 1px solid #FECACA; color: #991B1B; }
+.alert-success { background: #ECFDF5; border: 1px solid #A7F3D0; color: #065F46; }
+.alert-warning { background: #FFFBEB; border: 1px solid #FDE68A; color: #92400E; }
+.alert-info    { background: #F5F3FF; border: 1px solid #DDD6FE; color: #5B21B6; }
+
+.auth-divider { text-align: center; font-size: 0.875rem; color: var(--text-light); margin-top: 20px; }
+.auth-divider a { font-weight: 600; }
+
+/* =====================================================
+   BREADCRUMBS
+   ===================================================== */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    padding: 14px 0;
+    flex-wrap: wrap;
+}
+
+.breadcrumb a { color: var(--text-light); transition: color 0.15s; }
+.breadcrumb a:hover { color: var(--primary); }
+.breadcrumb .sep { color: var(--text-muted); font-size: 0.75rem; }
+.breadcrumb .current { color: var(--text); font-weight: 500; }
+
+/* =====================================================
+   PAGE HEADER
+   ===================================================== */
+.page-header {
+    padding: 28px 0 22px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+}
+
+.page-header h1 { font-size: 1.875rem; font-weight: 800; color: var(--text); letter-spacing: -0.5px; }
+.page-header p  { color: var(--text-light); margin-top: 6px; font-size: 0.95rem; }
+
+/* =====================================================
+   STATS CARDS (Dashboard)
+   ===================================================== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.stat-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.stat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.stat-card:hover::after { opacity: 1; }
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.stat-icon.blue   { background: #F5F3FF; color: var(--primary); }
+.stat-icon.green  { background: #ECFDF5; color: #065F46; }
+.stat-icon.orange { background: #FFF7ED; color: #C2410C; }
+.stat-icon.purple { background: #EDE9FE; color: #6D28D9; }
+
+.stat-info { flex: 1; min-width: 0; }
+
+.stat-value, .stat-num {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.stat-label { font-size: 0.8rem; color: var(--text-light); font-weight: 500; }
+
+/* =====================================================
+   DASHBOARD GRID LAYOUT
+   (used on both StudentDashboard and AdminDashboard)
+   ===================================================== */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 24px;
+    align-items: start;
+}
+
+/* =====================================================
+   PAGINATION
+   ===================================================== */
+.pagination { display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 32px; flex-wrap: wrap; }
+
+.page-btn {
+    padding: 7px 13px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-white);
+    color: var(--text);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.page-btn:hover { border-color: var(--primary); color: var(--primary); }
+.page-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+.page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* =====================================================
+   TABLES
+   ===================================================== */
+.data-table,
+.gridview-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.data-table th,
+.gridview-table th {
+    background: #F8FAFC;
+    color: var(--text-light);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 11px 16px;
+    border-bottom: 2px solid var(--border);
+    text-align: left;
+    white-space: nowrap;
+}
+
+.data-table td,
+.gridview-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: middle;
+}
+
+.data-table tr:last-child td,
+.gridview-table tr:last-child td { border-bottom: none; }
+
+.data-table tr:hover td,
+.gridview-table tr:hover td { background: #FAF5FF; }
+
+.gridview-table tr.selected-row td { background: #F5F3FF; }
+
+.gridview-pager td { padding: 12px 14px; text-align: center; border-top: 1px solid var(--border); }
+.gridview-pager a, .gridview-pager span { padding: 5px 10px; margin: 0 2px; border-radius: 4px; font-size: 0.85rem; }
+.gridview-pager a { color: var(--primary); border: 1px solid var(--border); }
+.gridview-pager span { background: var(--primary); color: #fff; font-weight: 600; }
+
+/* Badges */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-success { background: #DCFCE7; color: #166534; }
+.badge-danger  { background: #FEE2E2; color: #991B1B; }
+.badge-warning { background: #FEF3C7; color: #92400E; }
+.badge-info    { background: #F5F3FF; color: #5B21B6; }
+.badge-gray    { background: #F1F5F9; color: #475569; }
+
+.role-badge {
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.role-admin   { background: #EDE9FE; color: #5B21B6; }
+.role-student { background: #EDE9FE; color: #5B21B6; }
+
+/* =====================================================
+   TABLE ACTIONS & FORM ROW
+   ===================================================== */
+
+/* Table action buttons — Edit / Delete row in GridView */
+.table-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;
+}
+
+.table-actions .btn-sm {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.table-actions .btn-sm .btn-icon {
+    font-size: 0.82rem;
+    line-height: 1;
+}
+
+/* Two-column form row */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 0;
+}
+
+/* =====================================================
+   SIDEBAR CARD & QUICK ACTIONS
+   (used on both student dashboard and admin pages)
+   ===================================================== */
+.admin-sidebar-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow);
+}
+
+.admin-sidebar-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 14px; color: var(--text); }
+
+.quick-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 11px 16px;
+    margin-bottom: 8px;
+    background: #7C3AED;
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.quick-action-btn:hover { background: #6D28D9; color: #fff; transform: translateX(2px); }
+.quick-action-btn.outline { background: transparent; border: 1.5px solid #7C3AED; color: #7C3AED; }
+.quick-action-btn.outline:hover { background: #7C3AED; color: #fff; }
+
+.gridview-scroll { overflow-x: auto; }
+
+/* Chart placeholder */
+.chart-placeholder {
+    background: #F8FAFC;
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    gap: 8px;
+}
+
+/* =====================================================
+   ACTIVITY / MISCELLANEOUS
+   ===================================================== */
+.activity-list { list-style: none; }
+.activity-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.activity-item:last-child { border-bottom: none; }
+.activity-avatar { width: 34px; height: 34px; border-radius: 50%; background: #F5F3FF; color: var(--primary); font-weight: 700; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.activity-text { flex: 1; min-width: 0; }
+.activity-name   { font-weight: 600; font-size: 0.875rem; color: var(--text); }
+.activity-action { font-size: 0.8rem; color: var(--text-light); }
+.activity-time   { font-size: 0.75rem; color: var(--text-muted); white-space: nowrap; }
+
+.spinner { width: 28px; height: 28px; border: 3px solid #E2E8F0; border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; display: inline-block; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.empty-state { text-align: center; padding: 48px 20px; color: var(--text-light); }
+.empty-state .empty-icon { font-size: 2.5rem; margin-bottom: 12px; }
+.empty-state h3 { font-weight: 700; color: var(--text); margin-bottom: 6px; }
+
+.btn-outline.btn-flag {
+    color: #F59E0B;
+    border-color: #F59E0B;
+}
+
+.btn-outline.btn-flag:hover {
+    background: #F59E0B;
+    color: #fff;
+    border-color: #F59E0B;
+}
+
+.btn-flag-active {
+    background: #F59E0B;
+    border-color: #F59E0B;
+    color: #fff;
+}
+
+.btn-flag-active:hover {
+    background: #D97706;
+    border-color: #D97706;
+    color: #fff;
+}

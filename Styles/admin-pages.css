@@ -1,0 +1,163 @@
+/*
+ * Author:      All Member
+ * Description: Admin panel styles
+ * Date:        23/5/2026
+ */
+/* =====================================================
+   InsightLearn - Admin Pages Stylesheet
+   Admin layout, gridview, stats bar, forms, and
+   all admin-specific UI elements
+   ===================================================== */
+
+/* =====================================================
+   ADMIN PAGE LAYOUT
+   ===================================================== */
+.admin-page { padding: 28px 0 40px; }
+
+.action-bar {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* =====================================================
+   GRIDVIEW WRAPPER
+   ===================================================== */
+.gridview-wrapper {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.gridview-wrapper .gv-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FAFBFC;
+}
+
+.gridview-wrapper .gv-header h3 { font-size: 0.95rem; font-weight: 700; color: var(--text); }
+
+/* .gridview-scroll — moved to components.css */
+
+/* =====================================================
+   DETAILS INSERT CARD (Add / Edit forms)
+   ===================================================== */
+.details-insert-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    padding: 24px;
+    border-top: 3px solid var(--primary);
+}
+
+.details-insert-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.detailsview-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+.detailsview-table td { padding: 10px 20px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.detailsview-table td:first-child { font-weight: 600; color: var(--text); width: 140px; background: #FAFBFC; }
+.detailsview-table tr:last-child td { border-bottom: none; }
+
+/* NOTE: .admin-sidebar-card, .quick-action-btn, .gridview-scroll, and
+   .chart-placeholder are defined in components.css because they are also
+   used on student-facing pages (StudentDashboard.aspx). */
+
+/* =====================================================
+   ADMIN PAGE HEADER
+   ===================================================== */
+.admin-page-header { margin-bottom: 20px; }
+.admin-page-header h1 { font-size: 1.75rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+.admin-page-header p  { color: var(--text-light); font-size: 0.9rem; margin: 0; }
+
+/* =====================================================
+   ADMIN STATS BAR
+   ===================================================== */
+.admin-stats-bar {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.admin-stat-chip {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: var(--shadow);
+    flex: 1;
+    min-width: 130px;
+}
+
+.asc-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.asc-info .asc-num {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+}
+
+.asc-info .asc-lbl {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    margin-top: 2px;
+}
+
+/* =====================================================
+   USER AVATAR SMALL
+   ===================================================== */
+/* User avatar small — for GridView name column */
+.user-avatar-sm {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #F5F3FF;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* =====================================================
+   SECTION BLOCK
+   ===================================================== */
+.section-block { padding: 24px 0; }
+
+/* .chart-placeholder — moved to components.css */
