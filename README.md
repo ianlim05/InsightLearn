@@ -88,7 +88,7 @@ InsightLearn/
 
 **1. Clone the repository**
 ```bash
-[git clone https://github.com/ianlim05/InsightLearn.git]
+git clone https://github.com/ianlim05/InsightLearn.git
 ```
 
 **2. Open the project**
